@@ -1,0 +1,67 @@
+.tabs-module {
+  padding: 30px 0;
+  width: 50%;
+  margin: 0 auto;
+
+  &__list {
+    display: flex;
+  }
+
+  &__list-button {
+    z-index: 1;
+    position: relative;
+    list-style-type: none;
+    text-transform: uppercase;
+    padding: 10px;
+    color: $main-color-button-open-gradient;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+    background-color: white;
+    border: 1px dashed transparent;
+    font-size: 20px;
+    cursor: pointer;    
+
+    &:hover {
+      border-color: $main-color;
+      color: black;
+      border-bottom: 1px dashed transparent;
+    };
+
+    &--active {
+      border-color: $main-color;
+      color: black;
+      border-bottom: 1px dashed transparent;
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: white;
+      };
+    }
+  }
+
+  &__text-block {
+    display: none;
+    position: relative;
+    top: -0.5px;
+    padding: 15px;
+    animation: fadeEffect 1s;
+    border-top: 1px dashed $main-color;
+    box-shadow: 0px 9px 7px 1px rgba(0,0,0,0.75);
+    text-align: justify;
+
+    &--active {
+      display: block;
+    }
+  }
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}

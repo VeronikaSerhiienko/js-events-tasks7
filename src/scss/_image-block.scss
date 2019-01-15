@@ -1,0 +1,8 @@
+.image-block {
+  margin: 30px;
+  text-align: center;
+    &__images {
+      box-shadow: 9px 7px 13px 0px rgba(0, 0, 0, 0.75);
+      border-radius: 20px;  
+    }
+}

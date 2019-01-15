@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>js-tasks7-events</title>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+  <!-- modal window -->
+  <button class="modal-window__button-open js-modal-window-button-open">Press me</button>
+  <div class="modal-window-wrapper js-modal-window-wrapper">
+    <div class="modal-window js-modal-window">
+      <div class="modal-window__text">
+        <h2>Modal window</h2>
+        <hr>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi hendrerit turpis leo, nec dapibus sapien imperdiet sed. Integer arcu nibh, congue id ullamcorper in, dignissim eget urna. Donec sapien dui, porttitor in nisi ut, blandit sagittis nisi. Donec posuere sed nibh eget bibendum. Suspendisse at elit sem. Vivamus id elit et urna luctus fermentum ut eget odio. Nullam faucibus neque justo, sodales facilisis ex consectetur non. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas porttitor, tellus vel ultricies facilisis, tortor arcu venenatis ex, eu tempor justo metus sit amet elit. Donec sed sapien lacinia, volutpat sem eu, vehicula mauris. Cras velit velit, finibus sed molestie sit amet, venenatis sed arcu.
+        </p>
+      </div>
+      <button class="modal-window__button-close js-button-close">X</button>
+    </div>
+  </div>
+  <!-- modal window end -->
+  <!-- tab-links -->
+  <div class="tabs-module">
+    <ul class="tabs-module__list">
+      <li class="tabs-module__list-button tabs-module__list-button--active js-tab-links">Home</li>
+      <li class="tabs-module__list-button js-tab-links">Profile</li>
+      <li class="tabs-module__list-button js-tab-links">Contacts</li>
+    </ul> 
+    <div class="tabs-module__text-block tabs-module__text-block--active js-tab-content">Donec aliquam odio in tristique volutpat. Pellentesque tortor ipsum, viverra non tristique at, ultrices in enim. Curabitur fermentum est a justo vulputate, eu fringilla diam pulvinar. Curabitur posuere eros sagittis convallis dignissim. Vivamus vulputate ligula molestie, iaculis enim non, viverra sem. Phasellus quis augue molestie, sagittis massa faucibus, auctor diam. Maecenas auctor vestibulum turpis eget tempor. Praesent nec cursus quam. In finibus leo nec risus porttitor, ut lacinia nibh placerat.</div>
+    <div class="tabs-module__text-block js-tab-content">Phasellus suscipit scelerisque lacus, ac varius nisi facilisis vitae. Donec ut urna laoreet, sodales neque in, sodales ipsum. Phasellus venenatis odio mauris, ac convallis nunc iaculis pulvinar. Pellentesque accumsan nisl quis libero tempor, eget luctus nibh imperdiet. Suspendisse vel rhoncus leo, in luctus nisi. In ullamcorper interdum justo at ornare. Integer malesuada sapien tortor, eget porttitor tellus ornare quis. Maecenas eu vehicula lorem. Nullam ac risus dapibus, euismod mi at, semper metus. Integer porttitor congue lorem id finibus. Nullam cursus nisi tellus, elementum pharetra mi consectetur in. Curabitur ullamcorper nisi vitae massa ullamcorper, non porttitor ante eleifend. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc sapien dui, dictum et nulla ut, lobortis auctor purus.</div>
+    <div class=" tabs-module__text-block js-tab-content">Etiam tincidunt justo nibh, nec cursus justo pellentesque nec. Ut egestas maximus condimentum. Duis molestie mauris sed mi porta fermentum. Vivamus a purus ac ipsum posuere tempus. Integer quis dui id quam dapibus faucibus at vel augue. In consectetur ex ac enim elementum aliquet. Quisque est mauris, malesuada ut felis ac, semper venenatis nunc. Vestibulum blandit ullamcorper elementum. Pellentesque id eleifend ex. In congue enim nulla, non iaculis mi cursus non. Quisque faucibus, leo nec euismod consectetur, augue ligula eleifend lectus, at pulvinar velit tellus sed arcu. Donec vitae auctor felis.</div>
+  </div>
+  <!-- tab-links end--> 
+
+  <div id="slider" class="slider">
+    <button class="arrow previous">&#9668;</button>
+    <div class="image-gallery">
+      <ul class="images">
+        <li><img src="https://js.cx/carousel/1.png"></li>
+        <li><img src="https://js.cx/carousel/2.png"></li>
+        <li><img src="https://js.cx/carousel/3.png"></li>
+        <li><img src="https://js.cx/carousel/4.png"></li>
+        <li><img src="https://js.cx/carousel/5.png"></li>
+        <li><img src="https://js.cx/carousel/6.png"></li>
+        <li><img src="https://js.cx/carousel/7.png"></li>
+        <li><img src="https://js.cx/carousel/8.png"></li>
+        <li><img src="https://js.cx/carousel/9.png"></li>
+        <li><img src="https://js.cx/carousel/10.png"></li>
+        <li><img src="https://js.cx/carousel/10.png"></li>
+      </ul>
+    </div>
+    <button class="arrow next">&#9658;</button>
+  </div>
+  <button class="aside-menu__button js-hamburger">
+    <span class="aside-menu__button-line"></span>
+  </button>
+  <aside class="aside-menu js-menu">
+    <ul class="aside-menu__list">
+      <li class="aside-menu__list-item"><a class="aside-menu__link js-menu-link" href="#block1">Block 1</a></li>
+      <li class="aside-menu__list-item"><a class="aside-menu__link js-menu-link" href="#block2">Block 2</a></li>
+      <li class="aside-menu__list-item"><a class="aside-menu__link js-menu-link" href="#block3">Block 3</a></li>
+      <li class="aside-menu__list-item"><a class="aside-menu__link js-menu-link" href="#block4">Block 4</a></li>
+      <li class="aside-menu__list-item"><a class="aside-menu__link js-menu-link" href="#block5">Block 5</a></li>
+    </ul>
+  </aside>
+  <div id="block1" class="image-block"><img class="image-block__images" src="https://i.pinimg.com/originals/f2/18/a6/f218a6e57844394ce05c29bbc82980dc.jpg" alt="Spain"></div>
+  <div id="block2" class="image-block"><img class="image-block__images" src="http://cdn.ppcorn.com/wp-content/uploads/sites/14/2016/02/Spain-2-ppcorn-760x500.jpg" alt="Spain"></div>
+  <div id="block3" class="image-block"><img class="image-block__images" src="https://www.aaestates.com/property-image/xlarge_BTCABP2185_21469_V1_F37B.jpg" alt="Spain"></div>
+  <div id="block4" class="image-block"><img class="image-block__images" src="https://i.pinimg.com/originals/33/d1/5f/33d15fc6e7c7fabe79b7d4018f34250c.jpg" alt="Spain"></div>
+  <div id="block5" class="image-block"><img class="image-block__images" src="http://cdn.ppcorn.com/wp-content/uploads/sites/14/2016/02/Spain-ppcorn-760x500.jpg" alt="Spain"></div>
+
+<script src="js/modal-window.js" defer></script>
+<script src="js/aside-menu.js" defer></script>
+<script src="js/sliderModule.js" defer></script>
+<script src="js/tabsModule.js" defer></script>
+</body>
+</html>

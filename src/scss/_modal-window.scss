@@ -1,0 +1,80 @@
+.modal-window-wrapper {
+  display: none;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,25,25,0.8);
+  cursor: pointer;
+}
+
+.modal-window {
+  position: fixed;
+  display: none;
+  padding: 20px;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  width: 500px;
+  height: 500px;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  background-color: #fff;
+  transition: .64s ease-in-out;
+  box-shadow: 9px 7px 13px 0px rgba(0, 0, 0, 0.75);
+
+  &__button-open {
+    position: fixed;
+    top: 20px;
+    right: 15px;
+    background-color: transparent;
+    border-radius: 6px;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    border: 5px dashed $main-color;
+    color: $main-color;
+    font-size: 20px;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.75);
+    background-image: linear-gradient($main-color-button-open-gradient, $main-color-button-open-gradient);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition: background-size 0.5s;
+    cursor: pointer;
+
+    &:hover {
+      background-size: 100% 100%;
+      color: green;
+      border-style: inset;
+    };
+  } 
+
+  &__button-close {
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    width: 45px;
+    height: 45px;
+    font-size: 15px;
+    border: 0;
+    font-weight: 300;
+    border-radius: 100%;
+    background-color: #0A0A0A;
+    z-index: 3;
+    color: #fff;
+    line-height: 45px;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0px 0px 11px 2px $main-color;
+      color: $main-color;
+    };
+  }
+}
+
+.visible {
+  display: block;
+}
