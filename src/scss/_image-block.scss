@@ -1,8 +1,9 @@
 .image-block {
   margin-top: 30px;
   text-align: center;
+  
     &__images {
-      box-shadow: 9px 7px 13px 0px rgba(0, 0, 0, 0.75);
+      box-shadow: 9px 7px 13px 0 rgba(0, 0, 0, 0.75);
       border-radius: 20px;  
     }
 }

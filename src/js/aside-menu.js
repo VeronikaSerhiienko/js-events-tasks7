@@ -3,7 +3,7 @@
   var menu = document.querySelector('.js-menu');
   hamburger.addEventListener('click', function(event) {
       event.target.classList.toggle('aside-menu__button-active');
-      if(parseInt(menu.style.left) !== 0) {
+      if (parseInt(menu.style.left) !== 0) {
         menu.style.left = '0%';
       } else {
         menu.style.left = '-100%';
@@ -11,7 +11,7 @@
   });
 })();
 
-;(function() {
+(function() {
   function scrollTo(element) {
     window.scroll({
       behavior: 'smooth',

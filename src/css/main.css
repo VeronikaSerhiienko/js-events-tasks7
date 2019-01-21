@@ -36,7 +36,7 @@ button {
   text-align: center;
   background-color: #fff;
   transition: .64s ease-in-out;
-  box-shadow: 9px 7px 13px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 9px 7px 13px 0 rgba(0, 0, 0, 0.75);
 }
 
 .modal-window__button-open {
@@ -64,7 +64,7 @@ button {
 }
 
 .modal-window__button-close:hover {
-  box-shadow: 0px 0px 11px 2px cyan;
+  box-shadow: 0 0 11px 2px cyan;
   color: cyan;
 }
 
@@ -192,7 +192,7 @@ button {
   padding: 15px;
   animation: fadeEffect 1s;
   border-top: 1px dashed cyan;
-  box-shadow: 0px 9px 7px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 9px 7px 1px rgba(0, 0, 0, 0.75);
   text-align: justify;
 }
 
@@ -267,13 +267,13 @@ button {
   height: 50px;
   background-color: black;
   border-radius: 50%;
-  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 2px 10px 0px rgba(0, 0, 0, 0.75);
   cursor: pointer;
   transition: 1s;
 }
 
 .aside-menu__button:hover {
-  box-shadow: 0px 0px 11px 2px cyan;
+  box-shadow: 0 0 11px 2px cyan;
 }
 
 .aside-menu__button:hover .aside-menu__button-line,
@@ -346,7 +346,7 @@ button {
 }
 
 .image-block__images {
-  box-shadow: 9px 7px 13px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 9px 7px 13px 0 rgba(0, 0, 0, 0.75);
   border-radius: 20px;
 }
 
@@ -358,7 +358,7 @@ button {
   border: 5px dashed cyan;
   color: cyan;
   font-size: 20px;
-  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.75);
   background-image: linear-gradient(#00e5e5, #00e5e5);
   background-position: 50% 50%;
   background-repeat: no-repeat;

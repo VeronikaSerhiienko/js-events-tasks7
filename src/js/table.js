@@ -24,14 +24,12 @@
   previousPage.addEventListener('click', showPreviousPage);
 
   function showRows() {
-    var filterFieldInputedValue = filterField.value.toLowerCase();
-    var counterRecord = 0;
+    var filterFieldInputedValue = filterField.value.toLowerCase();  
     tableRowsArray.forEach(function(item) {
       item.classList.add('non-visible');
       var countryName = item.querySelector('.country').innerHTML.toLowerCase();
       if (countryName.indexOf(filterFieldInputedValue) !== -1) {        
-        item.classList.remove('non-visible');
-        counterRecord++;
+        item.classList.remove('non-visible');        
       }
     });
   }
@@ -56,23 +54,19 @@
   }
 
   function setOrRemoveHrefAttribute() {
-  if(previousPage.hasAttribute('href' ,'#')) {
-      previousPage.removeAttribute('href' ,'#');
-    } 
-    if(nextPage.hasAttribute('href' ,'#')) {
-      nextPage.removeAttribute('href','#');
-    }
+    previousPage.removeAttribute('href', '#');
+    nextPage.removeAttribute('href', '#');
 
     if (currentPage !== 1) {
-      previousPage.setAttribute('href','#');
+      previousPage.setAttribute('href', '#');
     }
 
     if (currentPage !== amountOfPages) {
-      nextPage.setAttribute('href','#');
+      nextPage.setAttribute('href', '#');
     }
   }
 
-  function showSelectedPage(event){
+  function showSelectedPage(event) {
     pageNumberListLink = document.querySelectorAll('.js-page-number-list-link');
     var pageNumberInnerText = event.target.innerHTML;
     pageNumberListLink[currentPage -1].classList.remove('pager__page--current');
@@ -85,7 +79,7 @@
     showPageInformation (rowsPerPageFieldInputedValue);
   }
 
-  function showNextPage(){
+  function showNextPage() {
     pageNumberListLink = document.querySelectorAll('.js-page-number-list-link');
     pageNumberListLink[currentPage -1].classList.remove('pager__page--current');
     currentPage++;
@@ -111,6 +105,7 @@
 
   function showRowsPerPage() {
     rowsPerPageFieldInputedValue = rowsPerPageField.value;
+
     drawPage(rowsPerPageFieldInputedValue);
     showListOfPage();
     showPageInformation(rowsPerPageFieldInputedValue);
@@ -123,23 +118,21 @@
     rowsPerPageFieldInputedValue = rowsPerPageField.value;
     if (rowsPerPageFieldInputedValue < 1) {
       return;
-    }
-    
-    amountOfPages = Math.ceil(totalAmountOfRows / rowsPerPageFieldInputedValue);  
-   
+    }    
+    amountOfPages = Math.ceil(totalAmountOfRows / rowsPerPageFieldInputedValue);   
     for (var i = 1; i <= amountOfPages; i++) {      
       var pageNumber = document.createElement('li');
       pageNumber.classList.add('pager__list-item');
       pageNumber.classList.add('js-page-number-list-item');      
       pageNumber.classList.add('non-visible');
-      if ( i === 1 || i === amountOfPages || (i >= currentPage - 1 && i <= currentPage + 1) || ( currentPage === 1 && i === currentPage + 2) ||(currentPage === amountOfPages && i === currentPage - 2)) {
+      if (i === 1 || i === amountOfPages || (i >= currentPage - 1 && i <= currentPage + 1) || ( currentPage === 1 && i === currentPage + 2) ||(currentPage === amountOfPages && i === currentPage - 2)) {
         pageNumber.classList.remove('non-visible');
       }
       var pageNumberLink = document.createElement('a');
       pageNumberLink.classList.add('pager__page');
       pageNumberLink.classList.add('js-page-number-list-link');
       pageNumberLink.setAttribute('href', '#');
-      pageNumberLink.innerText = '' + (i );
+      pageNumberLink.innerText = '' + i;
       pageNumberList.appendChild(pageNumber);   
       pageNumber.appendChild(pageNumberLink);
       if (+pageNumberLink.innerHTML === currentPage) {
@@ -148,14 +141,15 @@
     }
     pageNumberListItem = pageControls.querySelectorAll('.js-page-number-list-item');
     removeDots();
-   if( currentPage >= 4) {
-     insertDots(pageNumberListItem[1]);
-   }
-   if (currentPage <= amountOfPages - 3) {   
-   insertDots(pageNumberListItem[amountOfPages - 2]);
-  }    
-  setOrRemoveHrefAttribute();
-}
+    if ( currentPage >= 4) {
+      insertDots(pageNumberListItem[1]);
+    }
+    if (currentPage <= amountOfPages - 3) {   
+      insertDots(pageNumberListItem[amountOfPages - 2]);
+    }    
+    setOrRemoveHrefAttribute();
+  }
+
   function insertDots(place) {
     var tripleDots = document.createElement('li');
     tripleDots.innerText = '...';
