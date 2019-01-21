@@ -2,7 +2,7 @@
   var hamburger = document.querySelector('.js-hamburger');
   var menu = document.querySelector('.js-menu');
   hamburger.addEventListener('click', function(event) {
-      event.currentTarget.classList.toggle('aside-menu__button-active');
+      event.target.classList.toggle('aside-menu__button-active');
       if(parseInt(menu.style.left) !== 0) {
         menu.style.left = '0%';
       } else {
@@ -27,7 +27,7 @@
   function smoothClick(event) {
     event.preventDefault();
     //take id for block with attr href 
-    var id  = event.currentTarget.getAttribute('href');
+    var id  = event.target.getAttribute('href');
     scrollTo(document.querySelector(id));
   }
 })();

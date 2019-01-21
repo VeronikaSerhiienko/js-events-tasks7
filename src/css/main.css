@@ -13,7 +13,7 @@ button {
 
 .modal-window-wrapper {
   display: none;
-  z-index: 2;
+  z-index: 3;
   position: fixed;
   top: 0;
   left: 0;
@@ -29,7 +29,7 @@ button {
   padding: 20px;
   left: 50%;
   top: 50%;
-  z-index: 2;
+  z-index: 3;
   width: 500px;
   height: 500px;
   transform: translate(-50%, -50%);
@@ -43,26 +43,6 @@ button {
   position: fixed;
   top: 20px;
   right: 15px;
-  background-color: transparent;
-  border-radius: 6px;
-  text-transform: uppercase;
-  padding: 10px 15px;
-  border: 5px dashed cyan;
-  color: cyan;
-  font-size: 20px;
-  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.75);
-  background-image: linear-gradient(#00e5e5, #00e5e5);
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: 0% 100%;
-  transition: background-size 0.5s;
-  cursor: pointer;
-}
-
-.modal-window__button-open:hover {
-  background-size: 100% 100%;
-  color: green;
-  border-style: inset;
 }
 
 .modal-window__button-close {
@@ -76,7 +56,7 @@ button {
   font-weight: 300;
   border-radius: 100%;
   background-color: #0A0A0A;
-  z-index: 3;
+  z-index: 4;
   color: #fff;
   line-height: 45px;
   text-align: center;
@@ -245,6 +225,7 @@ button {
 
 .aside-menu__list-item {
   list-style-type: none;
+  padding: 20px 0;
 }
 
 .aside-menu__link {
@@ -253,7 +234,6 @@ button {
   text-transform: uppercase;
   display: block;
   text-align: center;
-  padding: 20px 0;
   color: green;
   font-size: 30px;
   transition: 0.5s;
@@ -263,7 +243,7 @@ button {
   content: "";
   position: absolute;
   display: block;
-  top: 0;
+  top: -10px;
   left: 0;
   width: 100%;
   height: 2px;
@@ -289,6 +269,7 @@ button {
   border-radius: 50%;
   box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.75);
   cursor: pointer;
+  transition: 1s;
 }
 
 .aside-menu__button:hover {
@@ -299,6 +280,10 @@ button {
 .aside-menu__button:hover .aside-menu__button-line:after,
 .aside-menu__button:hover .aside-menu__button-line:before {
   background-color: cyan;
+}
+
+.aside-menu__button:focus {
+  outline: 0;
 }
 
 .aside-menu__button-line {
@@ -356,11 +341,44 @@ button {
 }
 
 .image-block {
-  margin: 30px;
+  margin-top: 30px;
   text-align: center;
 }
 
 .image-block__images {
   box-shadow: 9px 7px 13px 0px rgba(0, 0, 0, 0.75);
   border-radius: 20px;
+}
+
+.button-open {
+  background-color: transparent;
+  border-radius: 6px;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  border: 5px dashed cyan;
+  color: cyan;
+  font-size: 20px;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.75);
+  background-image: linear-gradient(#00e5e5, #00e5e5);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition: background-size 0.5s;
+  cursor: pointer;
+}
+
+.button-open:hover {
+  background-size: 100% 100%;
+  color: green;
+  border-style: inset;
+}
+
+.table-page {
+  display: block;
+  text-align: center;
+}
+
+.table-page__button-open {
+  display: inline-block;
+  margin-top: 30px;
 }
