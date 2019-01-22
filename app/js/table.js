@@ -24,14 +24,23 @@
   previousPage.addEventListener('click', showPreviousPage);
 
   function showRows() {
-    var filterFieldInputedValue = filterField.value.toLowerCase();  
+    var filterFieldInputedValue = filterField.value.toLowerCase();
+    tableRowsArray = tableBody.querySelectorAll('tr');
+    totalAmountOfRows = tableRowsArray.length;
+    var filtredTableRowsArray = [];
     tableRowsArray.forEach(function(item) {
+      item.removeAttribute('data-filter');
       item.classList.add('non-visible');
       var countryName = item.querySelector('.country').innerHTML.toLowerCase();
       if (countryName.indexOf(filterFieldInputedValue) !== -1) {        
-        item.classList.remove('non-visible');        
+        item.dataset.filter = true;
+        item.classList.remove('non-visible');
+        filtredTableRowsArray.push(item);        
       }
     });
+    tableRowsArray = filtredTableRowsArray;   
+    totalAmountOfRows = filtredTableRowsArray.length;
+    showRowsPerPage();
   }
 
   function drawPage(rowsPerPageFieldInputedValue) {
@@ -50,17 +59,20 @@
   }
 
   function showPageInformation (rowsPerPageFieldInputedValue) {
-    pageInformationField.innerHTML = 'Show ' + ((((currentPage - 1) * rowsPerPageFieldInputedValue  + 1))) + ' to ' + Math.min(currentPage * rowsPerPageFieldInputedValue, totalAmountOfRows) +' of ' + totalAmountOfRows + ' rows ';
+    if (totalAmountOfRows !== 0) {
+      pageInformationField.innerHTML = 'Show ' + ((((currentPage - 1) * rowsPerPageFieldInputedValue  + 1))) + ' to ' + Math.min(currentPage * rowsPerPageFieldInputedValue, totalAmountOfRows) +' of ' + totalAmountOfRows + ' rows ';
+    } else {
+      pageInformationField.innerHTML = 'Show ' + 0 +' of ' + 0 + ' rows ';
+      nextPage.removeAttribute('href', '#');
+    }
   }
 
   function setOrRemoveHrefAttribute() {
     previousPage.removeAttribute('href', '#');
     nextPage.removeAttribute('href', '#');
-
     if (currentPage !== 1) {
       previousPage.setAttribute('href', '#');
     }
-
     if (currentPage !== amountOfPages) {
       nextPage.setAttribute('href', '#');
     }
@@ -76,7 +88,7 @@
     drawPage(rowsPerPageFieldInputedValue);
     setOrRemoveHrefAttribute();
     showListOfPage();
-    showPageInformation (rowsPerPageFieldInputedValue);
+    showPageInformation(rowsPerPageFieldInputedValue);
   }
 
   function showNextPage() {
@@ -104,8 +116,15 @@
   }
 
   function showRowsPerPage() {
+    currentPage = 1;
     rowsPerPageFieldInputedValue = rowsPerPageField.value;
-
+    if (rowsPerPageFieldInputedValue < 1) {
+      tableRowsArray.forEach(function(item) {
+        item.classList.remove('non-visible');
+      });
+      rowsPerPageFieldInputedValue = 150;
+    }   
+    
     drawPage(rowsPerPageFieldInputedValue);
     showListOfPage();
     showPageInformation(rowsPerPageFieldInputedValue);
@@ -117,7 +136,7 @@
     }
     rowsPerPageFieldInputedValue = rowsPerPageField.value;
     if (rowsPerPageFieldInputedValue < 1) {
-      return;
+      rowsPerPageFieldInputedValue = 150;
     }    
     amountOfPages = Math.ceil(totalAmountOfRows / rowsPerPageFieldInputedValue);   
     for (var i = 1; i <= amountOfPages; i++) {      
@@ -141,12 +160,14 @@
     }
     pageNumberListItem = pageControls.querySelectorAll('.js-page-number-list-item');
     removeDots();
-    if ( currentPage >= 4) {
-      insertDots(pageNumberListItem[1]);
+    if (amountOfPages > 4) {
+      if (currentPage >= 4) {
+        insertDots(pageNumberListItem[1]);
+      }
+      if (currentPage <= amountOfPages - 3) {   
+        insertDots(pageNumberListItem[amountOfPages - 2]);
+      }
     }
-    if (currentPage <= amountOfPages - 3) {   
-      insertDots(pageNumberListItem[amountOfPages - 2]);
-    }    
     setOrRemoveHrefAttribute();
   }
 
